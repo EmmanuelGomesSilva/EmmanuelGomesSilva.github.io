@@ -1,57 +1,119 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Portfólio - Emmanuel Gomes</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
-            padding: 50px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio - Emmanuel Gomes</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        img {
-            border-radius: 50%;
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border: 3px solid #333;
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6b73ff 0%, #000dff 100%);
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
 
-        h1 {
-            color: #333;
-        }
+    .container {
+      background-color: rgba(0, 0, 50, 0.8);
+      border-radius: 15px;
+      max-width: 600px;
+      width: 100%;
+      padding: 2rem;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      text-align: center;
+    }
 
-        p {
-            color: #555;
-            font-size: 18px;
-        }
+    img {
+      border-radius: 50%;
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border: 4px solid #81a1c1;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease;
+    }
 
-        .links a {
-            margin: 10px;
-            display: inline-block;
-            text-decoration: none;
-            color: white;
-            background-color: #0077cc;
-            padding: 10px 20px;
-            border-radius: 8px;
-        }
+    img:hover {
+      transform: scale(1.05);
+      border-color: #a0c4ff;
+    }
 
-        .links a:hover {
-            background-color: #005fa3;
-        }
-    </style>
+    h1 {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      font-size: 2.4rem;
+      color: #a0c4ff;
+      letter-spacing: 1.2px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #d0d4e6;
+      line-height: 1.4;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .links a {
+      background: #81a1c1;
+      color: #0f172a;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.8rem 1.6rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 10px rgba(129, 161, 193, 0.4);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .links a:hover {
+      background-color: #a0c4ff;
+      color: #000dff;
+      box-shadow: 0 6px 14px rgba(160, 196, 255, 0.6);
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      img {
+        width: 130px;
+        height: 130px;
+      }
+      .links a {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
-<img src="fotoperfil.jpeg" alt="Foto de Emmanuel Gomes">
-<h1>Emmanuel Gomes</h1>
-<p>Desenvolvedor em formação | Python & Java | Projetos práticos em terminal e web</p>
+  <div class="container">
+    <img src="fotoperfil.jpeg" alt="Foto de Emmanuel Gomes" />
+    <h1>Emmanuel Gomes</h1>
+    <p>Desenvolvedor em formação | Python & Java | Projetos práticos em terminal e web</p>
 
-<div class="links">
-    <a href="https://github.com/EmmanuelGomesSilva" target="_blank">GitHub</a>
-    <a href="https://github.com/EmmanuelGomesSilva/cadastro-clientes-python" target="_blank">Projeto: Cadastro de Clientes (Python)</a>
-    <a href="https://github.com/EmmanuelGomesSilva/livroReceitasFit" target="_blank">Projeto: Livro de Receitas Fit (Java)</a>
-</div>
+    <div class="links">
+      <a href="https://github.com/EmmanuelGomesSilva" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://github.com/EmmanuelGomesSilva/cadastro-clientes-python" target="_blank" rel="noopener noreferrer">Cadastro Clientes (Python)</a>
+      <a href="https://github.com/EmmanuelGomesSilva/livroReceitasFit" target="_blank" rel="noopener noreferrer">Livro de Receitas (Java)</a>
+    </div>
+  </div>
 </body>
 </html>
+
