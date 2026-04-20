@@ -3,171 +3,237 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfólio - Emmanuel Gomes</title>
+  <title>Emmanuel Gomes | Dev Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
+    :root {
+      --primary: #6366f1; /* Indigo moderno */
+      --secondary: #a855f7; /* Roxo */
+      --bg: #0f172a; /* Azul escuro profundo */
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-dim: #94a3b8;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #eef2f7;
-      color: #333;
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
       text-align: center;
       margin: 0;
       padding: 0;
+      line-height: 1.6;
     }
 
     header {
-      padding: 50px 20px 20px;
+      padding: 80px 20px 40px;
+      background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
     }
 
     img {
       border-radius: 50%;
-      width: 180px;
-      height: 180px;
+      width: 160px;
+      height: 160px;
       object-fit: cover;
-      border: 4px solid #0077cc;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border: 3px solid var(--primary);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05) rotate(2deg);
     }
 
     h1 {
-      font-size: 32px;
-      margin: 20px 0 10px;
+      font-size: 38px;
+      margin: 20px 0 5px;
+      background: linear-gradient(to right, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
     }
 
-    p {
-      font-size: 18px;
-      color: #555;
-      margin-bottom: 20px;
+    .cargo {
+      font-size: 1.1rem;
+      color: var(--text-dim);
+      max-width: 600px;
+      margin: 0 auto 30px;
     }
 
     .links, .skills, .projects {
-      margin: 30px auto;
-      max-width: 800px;
+      margin: 40px auto;
+      max-width: 900px;
       padding: 0 20px;
     }
 
-    .links a, .projects a {
-      margin: 10px;
-      display: inline-block;
+    /* Botões */
+    .btn {
       text-decoration: none;
       color: white;
-      background-color: #0077cc;
-      padding: 10px 20px;
-      border-radius: 8px;
-      transition: background 0.3s;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 12px 25px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
     }
 
-    .links a:hover, .projects a:hover {
-      background-color: #005fa3;
-    }
-
-    .skills ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .skills li {
-      margin: 10px 15px;
-      font-size: 18px;
-    }
-
-    .skills i {
-      margin-right: 8px;
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+      filter: brightness(1.1);
     }
 
     h2 {
-      font-size: 26px;
-      margin-bottom: 10px;
-      color: #0077cc;
+      font-size: 28px;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
     }
 
-    .projects div {
+    h2::after, h2::before {
+      content: "";
+      height: 1px;
+      width: 50px;
+      background: var(--text-dim);
+      opacity: 0.3;
+    }
+
+    /* Skills Grid */
+    .skills ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .skills li {
+      background: var(--card-bg);
+      padding: 15px;
+      border-radius: 12px;
+      text-align: left;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: background 0.3s;
+    }
+
+    .skills li:hover {
+      background: #2d3748;
+    }
+
+    .skills i {
+      color: var(--primary);
+      margin-right: 10px;
+    }
+
+    /* Projetos */
+    .project-card {
+      background: var(--card-bg);
       margin-bottom: 20px;
+      padding: 25px;
+      border-radius: 15px;
+      border-left: 5px solid var(--primary);
+      text-align: left;
+      transition: transform 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateX(10px);
+    }
+
+    .project-card strong {
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .project-card .btn-small {
+      font-size: 14px;
+      padding: 8px 16px;
     }
 
     footer {
-      margin: 40px 0;
+      margin: 80px 0 40px;
       font-size: 14px;
-      color: #888;
+      color: var(--text-dim);
     }
 
     @media (max-width: 600px) {
-      img {
-        width: 140px;
-        height: 140px;
-      }
-
-      h1 {
-        font-size: 26px;
-      }
-
-      .skills li {
-        font-size: 16px;
-      }
+      h1 { font-size: 28px; }
+      .skills ul { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="fotoperfil.jpeg" alt="Foto de Emmanuel Gomes" />
+    <img src="fotoperfil.jpeg" alt="Emmanuel Gomes" />
     <h1>Emmanuel Gomes</h1>
-    <p>Analista Desenvolvedor Java | Java Legado | Microsserviços | Spring Boot | Angular</p>
+    <p class="cargo">🚀 <b>Analista Desenvolvedor</b> | Java Enthusiast | Spring Boot | Angular | Microsserviços</p>
+    
+    <div class="links">
+      <a href="https://github.com/EmmanuelGomesSilva" target="_blank" class="btn">
+        <i class="fab fa-github"></i> Ver GitHub
+      </a>
+    </div>
   </header>
 
-  <div class="links">
-    <a href="https://github.com/EmmanuelGomesSilva" target="_blank">
-      <i class="fab fa-github"></i> GitHub
-    </a>
-  </div>
-
   <section class="skills">
-    <h2>⚙️ Habilidades</h2>
+    <h2><i class="fas fa-laptop-code"></i> Stack & Skills</h2>
     <ul>
-      <li><i class="fab fa-java"></i> Desenvolvimento e sustentação de aplicações Java legado</li>
-      <li><i class="fas fa-leaf"></i> Construção de microsserviços com Spring Boot</li>
-      <li><i class="fas fa-cloud"></i> Desenvolvimento de APIs REST</li>
-      <li><i class="fas fa-database"></i> Integração com bancos de dados via JPA/Hibernate</li>
-      <li><i class="fab fa-angular"></i> Atuação full stack com Angular e TypeScript</li>
-      <li><i class="fas fa-tools"></i> Correção de bugs, melhorias evolutivas e manutenção de sistemas críticos</li>
-
+      <li><i class="fab fa-java"></i> Java Legado & Sustentação</li>
+      <li><i class="fas fa-leaf"></i> Microsserviços com Spring Boot</li>
+      <li><i class="fas fa-project-diagram"></i> APIs RESTful Robustas</li>
+      <li><i class="fas fa-database"></i> JPA, Hibernate & SQL</li>
+      <li><i class="fab fa-angular"></i> Front-end com Angular & TS</li>
+      <li><i class="fas fa-bug-slash"></i> Refatoração e Missões Críticas</li>
     </ul>
   </section>
 
   <section class="projects">
-    <h2>📂 Projetos</h2>
+    <h2><i class="fas fa-folder-open"></i> Projetos em Destaque</h2>
 
-    <div>
-      <strong>SafeHer API (Java)</strong><br />
-      <a href="https://github.com/EmmanuelGomesSilva/safeher-api" target="_blank">
-        Código no GitHub
+    <div class="project-card">
+      <strong>🛡️ SafeHer API</strong>
+      <p style="font-size: 14px; color: var(--text-dim);">Ecossistema focado em segurança desenvolvido em Java.</p>
+      <a href="https://github.com/EmmanuelGomesSilva/safeher-api" target="_blank" class="btn btn-small">
+        <i class="fas fa-code-branch"></i> Repo
       </a>
     </div>
 
-    <div>
-      <strong>StudyFlash - API de Flashcards com Spaced Repetition (Java)</strong><br />
-      <a href="https://github.com/EmmanuelGomesSilva/studyflash-api" target="_blank">
-        Código no GitHub
+    <div class="project-card">
+      <strong>🧠 StudyFlash</strong>
+      <p style="font-size: 14px; color: var(--text-dim);">API de Flashcards com algoritmo de repetição espaçada.</p>
+      <a href="https://github.com/EmmanuelGomesSilva/studyflash-api" target="_blank" class="btn btn-small">
+        <i class="fas fa-code-branch"></i> Repo
       </a>
     </div>
-    <div>
-      <strong>TODO API - Secure Backend with Spring Boot (Java)</strong><br />
-      <a href="https://github.com/EmmanuelGomesSilva/secure-todo-api" target="_blank">
-        Código no GitHub
+
+    <div class="project-card">
+      <strong>✅ TODO API - Secure Backend</strong>
+      <p style="font-size: 14px; color: var(--text-dim);">Gerenciamento de tarefas com Spring Security avançado.</p>
+      <a href="https://github.com/EmmanuelGomesSilva/secure-todo-api" target="_blank" class="btn btn-small">
+        <i class="fas fa-code-branch"></i> Repo
       </a>
     </div>
-     <div>
-      <strong>Loan Service API (Java)</strong><br />
-      <a href="https://github.com/EmmanuelGomesSilva/loan-service" target="_blank">
-        Código no GitHub
+
+    <div class="project-card">
+      <strong>💰 Loan Service API</strong>
+      <p style="font-size: 14px; color: var(--text-dim);">Serviço escalável para processamento de empréstimos.</p>
+      <a href="https://github.com/EmmanuelGomesSilva/loan-service" target="_blank" class="btn btn-small">
+        <i class="fas fa-code-branch"></i> Repo
       </a>
     </div>
   </section>
 
   <footer>
-    © 2025 Emmanuel Gomes. Todos os direitos reservados.
+    Criado com ☕ e Java por Emmanuel Gomes &copy; 2025
   </footer>
+
 </body>
 </html>
